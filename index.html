@@ -19,58 +19,59 @@
         <span class="text-white/80 text-sm font-medium">Take Quiz</span>
     </nav>
 
-  <div class="flex-1 flex items-center justify-center p-4 min-h-screen ">
-  <div class="bg-white rounded-2xl shadow-2xl p-7 w-full max-w-md fade-in">
-        <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">Online Quiz</h1>
+    <div class="flex-1 flex items-center justify-center p-4 min-h-135 ">
+        <div class="bg-white rounded-2xl shadow-2xl p-7 w-full max-w-md fade-in">
+            <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">Online Quiz</h1>
 
 
-    <div id="startScreen" class="text-center">
-      <p class="text-gray-600 mb-4">Test your knowledge! There are 5 questions.</p>
-      <button onclick="startQuiz()"
-        class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded">
-        Start Quiz
-      </button>
+            <div id="startScreen" class="text-center">
+                <p class="text-gray-600 mb-4">Test your knowledge! There are 5 questions.</p>
+                <button onclick="startQuiz()" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded">
+                    Start Quiz
+                </button>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quizScreen" class="hidden">
+
+                <p class="text-sm text-gray-500 mb-2">
+                    Question <span id="questionNumber"></span> of <span id="totalQuestions"></span>
+                </p>
+
+                <h2 id="questionText" class="text-lg font-semibold mb-4"></h2>
+
+                <div id="optionsBox" class="flex flex-col gap-2"></div>
+
+                <p id="feedback" class="mt-3 text-sm font-medium"></p>
+
+                <button id="nextBtn" onclick="nextQuestion()"
+                    class="hidden mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                    Next Question
+                </button>
+
+            </div>
+
+            <!-- Result Screen -->
+            <div id="resultScreen" class="hidden text-center">
+                <h2 class="text-xl font-bold mb-2">Quiz Finished!</h2>
+                <p class="text-gray-600 mb-2">Your Score:</p>
+                <p id="finalScore" class="text-4xl font-bold text-blue-600 mb-4"></p>
+                <p id="resultMessage" class="text-gray-600 mb-4"></p>
+                <button onclick="restartQuiz()" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded">
+                    Try Again
+                </button>
+            </div>
+
+        </div>
     </div>
-
-  <!-- Quiz Screen -->
-    <div id="quizScreen" class="hidden">
-
-      <p class="text-sm text-gray-500 mb-2">
-        Question <span id="questionNumber"></span> of <span id="totalQuestions"></span>
-      </p>
-
-      <h2 id="questionText" class="text-lg font-semibold mb-4"></h2>
-
-      <div id="optionsBox" class="flex flex-col gap-2"></div>
-
-      <p id="feedback" class="mt-3 text-sm font-medium"></p>
-
-      <button id="nextBtn" onclick="nextQuestion()"
-        class="hidden mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
-        Next Question
-      </button>
-
-    </div>
-
-    <!-- Result Screen -->
-    <div id="resultScreen" class="hidden text-center">
-      <h2 class="text-xl font-bold mb-2">Quiz Finished!</h2>
-      <p class="text-gray-600 mb-2">Your Score:</p>
-      <p id="finalScore" class="text-4xl font-bold text-blue-600 mb-4"></p>
-      <p id="resultMessage" class="text-gray-600 mb-4"></p>
-      <button onclick="restartQuiz()"
-        class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded">
-        Try Again
-      </button>
-    </div>
-
-  </div>
-  </div>
 
 
     <footer class="w-full px-6 py-4 text-center bg-purple-500 backdrop-blur-sm">
-    <p class="text-white/70 text-xs">Made by Arman Islam for Auspify Task &middot; &copy; <span id="year"></span> QuizApp</p>
-  </footer>
+        <p class="text-white/70 text-xs">Made by Arman Islam for Auspify Task &middot; &copy; <span id="year"></span>
+            QuizApp</p>
+    </footer>
+
+    <script src="dist/script.js"></script>
 </body>
 
 </html>
